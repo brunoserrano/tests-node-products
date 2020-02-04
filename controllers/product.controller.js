@@ -18,12 +18,7 @@ exports.get = function(req, res) {
 }
 
 exports.create = function(req, res) {
-    let product = new Product(
-        {
-            name: req.body.name,
-            price: req.body.price
-        }
-    );
+    let product = new Product(req.body);
 
     product.save(function (err) {
         if (err) {
